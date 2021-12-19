@@ -6,7 +6,7 @@ namespace cs_learning
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Mathematics.RunFunctions();
         }
     }
 }
