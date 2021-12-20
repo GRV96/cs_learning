@@ -6,9 +6,9 @@ namespace cs_learning
     {
         static void Main(string[] args)
         {
-            Miscellanous.RunFunctions();
-            Console.WriteLine();
             Mathematics.RunFunctions();
+            Console.WriteLine();
+            Miscellanous.RunFunctions();
         }
     }
 }

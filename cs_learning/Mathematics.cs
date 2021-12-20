@@ -45,17 +45,21 @@ namespace cs_learning
 
         private static void PrintSwappedIntegers(int number1, int number2)
         {
-            Console.WriteLine("Before swap: {0}; {1}", number1, number2);
+            Console.WriteLine("Integers before swap: {0}; {1}", number1, number2);
             unsafe
             {
                 SwapIntegers(&number1, &number2);
             }
-            Console.WriteLine("After swap: {0}; {1}", number1, number2);
+            Console.WriteLine("Integers after swap: {0}; {1}", number1, number2);
         }
 
         public static void RunFunctions()
         {
-            PrintSwappedIntegers(49, 53);
+            for(int i=0; i<=20; i++)
+            {
+                PrintFactorial((uint) i);
+            }
+
             Console.WriteLine();
 
             PrintGcd(7, 0);
@@ -65,10 +69,7 @@ namespace cs_learning
 
             Console.WriteLine();
 
-            for(int i=0; i<=20; i++)
-            {
-                PrintFactorial((uint) i);
-            }
+            PrintSwappedIntegers(49, 53);
         }
 
         public static unsafe void SwapIntegers(int* number1, int* number2)
