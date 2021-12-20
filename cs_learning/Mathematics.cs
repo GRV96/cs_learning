@@ -21,7 +21,7 @@ namespace cs_learning
             number1 = Math.Abs(number1);
             number2 = Math.Abs(number2);
 
-            while (number2 > 0)
+            while(number2 > 0)
             {
                 int remainder = number1 % number2;
                 number1 = number2;
@@ -43,10 +43,24 @@ namespace cs_learning
                 number1, number2, GreatestCommonDivisor(number1, number2));
         }
 
+        private static void PrintSwappedIntegers(int number1, int number2)
+        {
+            Console.WriteLine("Before swap: {0}, {1}", number1, number2);
+            unsafe
+            {
+                SwapIntegers(&number1, &number2);
+            }
+            Console.WriteLine("After swap: {0}, {1}", number1, number2);
+        }
+
         public static void RunFunctions()
         {
+            PrintSwappedIntegers(49, 53);
+            Console.WriteLine();
+
             PrintGcd(7, 0);
             PrintGcd(19, 7);
+            PrintGcd(42, 56);
             PrintGcd(720, 96);
 
             Console.WriteLine();
@@ -55,6 +69,13 @@ namespace cs_learning
             {
                 PrintFactorial((uint) i);
             }
+        }
+
+        public static unsafe void SwapIntegers(int* number1, int* number2)
+        {
+            int temporary = *number1;
+            *number1 = *number2;
+            *number2 = temporary;
         }
     }
 }
