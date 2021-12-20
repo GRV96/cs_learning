@@ -45,12 +45,12 @@ namespace cs_learning
 
         private static void PrintSwappedIntegers(int number1, int number2)
         {
-            Console.WriteLine("Before swap: {0}, {1}", number1, number2);
+            Console.WriteLine("Before swap: {0}; {1}", number1, number2);
             unsafe
             {
                 SwapIntegers(&number1, &number2);
             }
-            Console.WriteLine("After swap: {0}, {1}", number1, number2);
+            Console.WriteLine("After swap: {0}; {1}", number1, number2);
         }
 
         public static void RunFunctions()
