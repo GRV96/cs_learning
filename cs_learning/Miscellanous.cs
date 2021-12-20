@@ -6,12 +6,24 @@ namespace cs_learning
     {
         public static bool IsLeapYear(int year)
         {
+            if(year == 0)
+            {
+                throw new ArgumentException("Year 0 does not exist.");
+            }
+
             return (year % 4 == 0 && year % 100 != 0) || year % 400 == 0;
         }
 
         private static void PrintIsLeapYear(int year)
         {
-            Console.WriteLine("{0} is a leap year: {1}", year, IsLeapYear(year));
+            try
+            {
+                Console.WriteLine("{0} is a leap year: {1}", year, IsLeapYear(year));
+            }
+            catch (ArgumentException ae)
+            {
+                Console.WriteLine(ae.Message);
+            }
         }
 
         private static void PrintSwappedData(dynamic data1, dynamic data2)
@@ -39,6 +51,9 @@ namespace cs_learning
             PrintIsLeapYear(1900);
             PrintIsLeapYear(1896);
             PrintIsLeapYear(1895);
+            PrintIsLeapYear(0);
+            PrintIsLeapYear(-1);
+            PrintIsLeapYear(-4);
         }
 
         public static void SwapData(ref dynamic data1, ref dynamic data2)
