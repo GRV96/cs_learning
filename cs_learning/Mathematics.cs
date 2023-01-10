@@ -47,7 +47,7 @@ namespace cs_learning
 
         private static void PrintGcd(int number1, int number2)
         {
-            Console.WriteLine("GCD({0}, {1}): {2}",
+            Console.WriteLine("gcd({0}, {1}) = {2}",
                 number1, number2, GreatestCommonDivisor(number1, number2));
         }
 
