@@ -6,7 +6,7 @@ namespace cs_learning
     {
         public static ulong Factorial(uint number)
         {
-            // An overflow occurs if i >= 21.
+            // An overflow occurs if number >= 21.
             if(number == 0)
             {
                 return 1;
@@ -20,6 +20,14 @@ namespace cs_learning
             // This function executes the Euclidean algorithm.
             number1 = Math.Abs(number1);
             number2 = Math.Abs(number2);
+
+            if(number1 < number2)
+            {
+                unsafe
+                {
+                    SwapIntegers(&number1, &number2);
+                }
+            }
 
             while(number2 > 0)
             {
@@ -63,9 +71,9 @@ namespace cs_learning
             Console.WriteLine();
 
             PrintGcd(7, 0);
-            PrintGcd(19, 7);
-            PrintGcd(42, 56);
-            PrintGcd(720, 96);
+            PrintGcd(-19, 7);
+            PrintGcd(42, -56);
+            PrintGcd(96, 720);
 
             Console.WriteLine();
 
